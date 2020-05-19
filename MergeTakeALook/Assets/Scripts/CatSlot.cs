@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CatSlot : MonoBehaviour
 {
+    public Sprite mountedBox;
+    public Sprite unmountedBox;
 
     public bool isCatMounted { get; set; }
 
@@ -16,6 +18,8 @@ public class CatSlot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isCatMounted = (gameObject.transform.childCount > 0); 
+        isCatMounted = (gameObject.transform.childCount > 0);
+        if (isCatMounted) GetComponent<SpriteRenderer>().sprite = mountedBox;
+        else GetComponent<SpriteRenderer>().sprite = unmountedBox;
     }
 }
