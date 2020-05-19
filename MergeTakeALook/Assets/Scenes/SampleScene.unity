@@ -245,6 +245,8 @@ GameObject:
   m_Component:
   - component: {fileID: 148634167}
   - component: {fileID: 148634168}
+  - component: {fileID: 148634169}
+  - component: {fileID: 148634170}
   m_Layer: 0
   m_Name: CatSlot02
   m_TagString: Untagged
@@ -315,6 +317,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &148634169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148634166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75b4af9b4cdfa4890b95f6268d743aae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &148634170
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148634166}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.5, y: 0.4}
+    newSize: {x: 0.5, y: 0.4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.4}
+  m_EdgeRadius: 0
 --- !u!1 &229845823
 GameObject:
   m_ObjectHideFlags: 0
@@ -1412,9 +1452,9 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!224 &1228081244 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5100167041074634731, guid: 97c1d100e50084bcf8105f306b706af2,
+--- !u!4 &1228081244 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7381427945357327898, guid: 97c1d100e50084bcf8105f306b706af2,
     type: 3}
   m_PrefabInstance: {fileID: 5100167039882598327}
   m_PrefabAsset: {fileID: 0}
@@ -2122,6 +2162,7 @@ GameObject:
   - component: {fileID: 1608610082}
   - component: {fileID: 1608610083}
   - component: {fileID: 1608610084}
+  - component: {fileID: 1608610085}
   m_Layer: 0
   m_Name: CatSlot01
   m_TagString: Untagged
@@ -2203,7 +2244,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -2219,6 +2260,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.4}
   m_EdgeRadius: 0
+--- !u!114 &1608610085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608610081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75b4af9b4cdfa4890b95f6268d743aae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1662756013
 GameObject:
   m_ObjectHideFlags: 0
@@ -2618,7 +2671,7 @@ PrefabInstance:
     - target: {fileID: 5100167041074634730, guid: 97c1d100e50084bcf8105f306b706af2,
         type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5100167041074634731, guid: 97c1d100e50084bcf8105f306b706af2,
         type: 3}

@@ -5,7 +5,7 @@ using UnityEngine;
 public class CatSlot : MonoBehaviour
 {
 
-    private bool isCatMounted;
+    public bool isCatMounted { get; set; }
 
     // Start is called before the first frame update
     void Start()
