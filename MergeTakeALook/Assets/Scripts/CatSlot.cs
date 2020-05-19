@@ -16,6 +16,6 @@ public class CatSlot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        isCatMounted = (gameObject.transform.childCount > 0); 
     }
 }

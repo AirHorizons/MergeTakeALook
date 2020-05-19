@@ -2121,6 +2121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1608610082}
   - component: {fileID: 1608610083}
+  - component: {fileID: 1608610084}
   m_Layer: 0
   m_Name: CatSlot01
   m_TagString: Untagged
@@ -2192,6 +2193,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1608610084
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608610081}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.5, y: 0.4}
+    newSize: {x: 0.5, y: 0.4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.4}
+  m_EdgeRadius: 0
 --- !u!1 &1662756013
 GameObject:
   m_ObjectHideFlags: 0
@@ -2588,6 +2615,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1608610082}
     m_Modifications:
+    - target: {fileID: 5100167041074634730, guid: 97c1d100e50084bcf8105f306b706af2,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5100167041074634731, guid: 97c1d100e50084bcf8105f306b706af2,
         type: 3}
       propertyPath: m_LocalPosition.x
