@@ -1,0 +1,24 @@
+﻿<Properties StartupConfiguration="{93639178-7177-940D-12F9-F9882D48973E}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CatGenerator.cs">
+    <Files>
+      <File FileName="Assets/Scripts/NormalTakeALook.cs" Line="7" Column="2" />
+      <File FileName="Assets/DragAndDrop.cs" Line="51" Column="83" />
+      <File FileName="Assets/Scripts/CatSlot.cs" Line="13" Column="30" />
+      <File FileName="Assets/Scripts/CatGenerator.cs" Line="17" Column="6" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MergeTakeALook" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="15ab5bee-7b03-42fe-ad90-856b723c4623" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
