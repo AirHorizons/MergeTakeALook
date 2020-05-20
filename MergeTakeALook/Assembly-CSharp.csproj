@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\CatGenerator.cs" />
     <Compile Include="Assets\Scripts\CatSlot.cs" />
     <Compile Include="Assets\Scripts\DragAndDrop.cs" />
+    <Compile Include="Assets\Scripts\NormalCats.cs" />
     <Compile Include="Assets\Scripts\NormalTakeALook.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/Users/worldneedscat/Desktop/MergeTakeALook/MergeTakeALook/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

@@ -9,11 +9,20 @@ public class DragAndDrop : MonoBehaviour
     private float initPosX, initPosY;
     private bool isLocked = false;
 
+    public Sprite normalCat;
+    public Sprite holdCat;
+
+    public GameObject CatSlots;
+
     private List<GameObject> collided;
 
     void Start()
     {
         collided = new List<GameObject>();
+        CatSlots = GameObject.Find("CatSlots");
+
+        if (CatSlots == null)
+            Debug.Log("Warning: Cannot find CatSlots!");
     }
 
     // Update is called once per frame
@@ -41,6 +50,21 @@ public class DragAndDrop : MonoBehaviour
             initPosX = mousePos.x - startPosX;
             initPosY = mousePos.y - startPosY;
 
+            Debug.Log(startPosX + " " + startPosY  + " " + initPosX + " " + initPosY);
+
+            // change sprite
+            gameObject.GetComponentInChildren<SpriteRenderer>().sprite = holdCat;
+
+            // turn Rigidbody2d  of other cats off
+            foreach (Transform catslot in CatSlots.transform)
+            {
+                // catslot has a cat
+                if (catslot.childCount > 0 && catslot.GetChild(0) != gameObject.transform)
+                {
+                    catslot.GetChild(0).gameObject.GetComponent<Rigidbody2D>().simulated = false;
+                }
+            }
+
             isLocked = true;
         }
     }
@@ -48,11 +72,14 @@ public class DragAndDrop : MonoBehaviour
     private void OnMouseUp()
     {
         GameObject nearestSlot = null;
+        Transform swapCat = null;
+        float swapCatPosX, swapCatPosY;
 
         float mindistance = 99999f;
-        Debug.Log(collided.Count);
+
         if (collided.Count > 0)
         {
+            // find nearest cat slot
             foreach (GameObject collidedObject in collided)
             {
                 if (collidedObject.GetComponent<CatSlot>() != null && (Vector3.Distance(this.transform.position, collidedObject.transform.position)) < mindistance)
@@ -64,24 +91,52 @@ public class DragAndDrop : MonoBehaviour
 
             if (nearestSlot != null)
             {
-                if (nearestSlot.GetComponent<CatSlot>().isCatMounted)
+                // change slots or merge cat
+                if (nearestSlot.transform != transform.parent && nearestSlot.GetComponent<CatSlot>().isCatMounted)
                 {
+                    // merge cat
+                    if (this.GetComponent<NormalTakeALook>().catLevel == nearestSlot.transform.GetChild(0).GetComponent<NormalTakeALook>().catLevel)
+                    {
+                        // TODO: Merge cat into other slot
+                        Debug.Log("MergeCat");
+                    }
 
+                    // swap cat
+                    else
+                    {
+                        swapCat = nearestSlot.transform.GetChild(0);
+                        swapCat.parent = transform.parent;
+                        transform.parent = nearestSlot.transform;
+                        gameObject.GetComponentInChildren<SpriteRenderer>().sprite = normalCat;
+                    }
                 }
+                // move cat
                 else
                 {
-                    this.transform.parent = nearestSlot.transform;
+                    transform.parent = nearestSlot.transform;
+                    transform.localPosition = new Vector3(startPosX, startPosY, 0);
+                    gameObject.GetComponentInChildren<SpriteRenderer>().sprite = normalCat;
+                }
+            }
+
+            foreach (Transform catslot in CatSlots.transform)
+            {
+                // catslot has a cat
+                if (catslot.childCount > 0 && catslot.GetChild(0) != gameObject.transform)
+                {
+                    catslot.GetChild(0).gameObject.GetComponent<Rigidbody2D>().simulated = true;
                 }
             }
         }
 
-        this.gameObject.transform.localPosition = new Vector3(startPosX, startPosY, this.gameObject.transform.localPosition.z);
+
+        transform.localPosition = new Vector3(startPosX, startPosY, 0);
+        if (swapCat != null) swapCat.localPosition = new Vector3(0, 0, 0);
         isLocked = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Collided");
         collided.Add(collision.gameObject);
     }
 

@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class NormalTakeALook : MonoBehaviour
 {
 
-    private int catLevel = 1;
+    public int catLevel;
 
     // Start is called before the first frame update
     void Start()
