@@ -73,7 +73,7 @@ public class DragAndDrop : MonoBehaviour
     {
         GameObject nearestSlot = null;
         Transform swapCat = null;
-        float swapCatPosX, swapCatPosY;
+        bool isMerged = false;
 
         float mindistance = 99999f;
 
@@ -97,8 +97,16 @@ public class DragAndDrop : MonoBehaviour
                     // merge cat
                     if (this.GetComponent<NormalTakeALook>().catLevel == nearestSlot.transform.GetChild(0).GetComponent<NormalTakeALook>().catLevel)
                     {
-                        // TODO: Merge cat into other slot
-                        Debug.Log("MergeCat");
+                        swapCat = nearestSlot.transform.GetChild(0);
+                        GameObject normalCats = GameObject.Find("NormalCats");
+                        gameObject.SetActive(false);
+                        isMerged = true;
+                        collided.Remove(swapCat.gameObject);
+                        swapCat.gameObject.SetActive(false);
+                        GameObject nextLevelCat = Object.Instantiate(normalCats.GetComponent<NormalCats>().normalCatList[GetComponent<NormalTakeALook>().catLevel], new Vector3(0, 0, 0), Quaternion.identity);
+                        nextLevelCat.transform.parent = nearestSlot.transform;
+                        nextLevelCat.transform.localPosition = new Vector3(0, 0, 0);
+                        Destroy(swapCat.gameObject);
                     }
 
                     // swap cat
@@ -126,6 +134,11 @@ public class DragAndDrop : MonoBehaviour
                 {
                     catslot.GetChild(0).gameObject.GetComponent<Rigidbody2D>().simulated = true;
                 }
+            }
+
+            if (isMerged)
+            {
+                Destroy(gameObject);
             }
         }
 

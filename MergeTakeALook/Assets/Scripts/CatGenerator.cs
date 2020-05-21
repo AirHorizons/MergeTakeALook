@@ -5,42 +5,70 @@ using UnityEngine.EventSystems;
 
 public class CatGenerator : MonoBehaviour
 {
-    public float genGauge= 0.0f;
+    private int genGauge = 200;
+    private int maxGauge = 500;
+    private int gaugeSpeed = 20;
+    private int gaugeChargeRate = 10;
+    private int gaugeClickrate = 10;
     public GameObject newCatPrefab;
     public GameObject catSlots;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        InvokeRepeating("chargeGauge", 0.1f, 0.1f);
     }
 
-    // Update is called once per frame
-    void Update()
+    
+
+    void chargeGauge()
     {
-        
+        if (genGauge < maxGauge)
+        {
+            if (maxGauge - genGauge > gaugeSpeed / gaugeChargeRate)
+                genGauge += gaugeSpeed / gaugeChargeRate;
+            else
+                genGauge = maxGauge;
+        }
+        Debug.Log(genGauge);
     }
 
     public void GenerateCat()
     {
         if (catSlots == null)
         {
-            Debug.Log("CatSlot is Empty");
+            Debug.Log("CatSlot is Null");
             return;
         }
-        Transform transform = catSlots.GetComponent<Transform>();
-        foreach (Transform catSlot in transform)
+        if (genGauge >= 100)
         {
-            if (catSlot.childCount == 0)
+            Debug.Log("GenCat");
+            Transform transform = catSlots.GetComponent<Transform>();
+            foreach (Transform catSlot in transform)
             {
-                GameObject newCat = Instantiate(newCatPrefab, catSlot.position, Quaternion.identity);
-                newCat.transform.parent = catSlot;
-                return;
+                if (catSlot.childCount == 0)
+                {
+                    GameObject newCat = Instantiate(newCatPrefab, catSlot.position, Quaternion.identity);
+                    newCat.transform.parent = catSlot;
+                    genGauge -= 100;
+                    return;
+                }
             }
+            // no empty Slot
+            // TODO: print message that no cat slot is available
+            Debug.Log("Not enough CatSlot!");
+            
+            
         }
-
-        // no empty Slot
-        // TODO: print message that no cat slot is available
-        Debug.Log("Not enough CatSlot!");
+        if (genGauge < maxGauge)
+        {
+            if (maxGauge - genGauge > gaugeClickrate)
+                genGauge += gaugeClickrate;
+            else
+                genGauge = maxGauge;
+        }
     }
+
+    public int getGenGauge() { return genGauge; }
+    public int getMaxGauge() { return maxGauge; }
 }
