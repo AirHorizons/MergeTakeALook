@@ -1,15 +1,17 @@
 ﻿<Properties StartupConfiguration="{93639178-7177-940D-12F9-F9882D48973E}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/WoodText.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../../Applications/Unity/Hub/Editor/2019.2.15f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs">
     <Files>
       <File FileName="Assets/Scripts/NormalTakeALook.cs" Line="9" Column="24" />
       <File FileName="Assets/DragAndDrop.cs" Line="141" Column="35" />
       <File FileName="Assets/Scripts/CatSlot.cs" Line="15" Column="21" />
-      <File FileName="Assets/Scripts/CatGenerator.cs" Line="73" Column="48" />
+      <File FileName="Assets/Scripts/CatGenerator.cs" Line="33" Column="12" />
       <File FileName="Assets/NormalCats.cs" Line="8" Column="36" />
-      <File FileName="Assets/Scripts/UserInfo.cs" Line="20" Column="16" />
-      <File FileName="Assets/Scripts/GoldText.cs" Line="21" Column="6" />
-      <File FileName="Assets/Scripts/CatnipText.cs" Line="12" Column="6" />
-      <File FileName="Assets/Scripts/WoodText.cs" Line="4" Column="18" />
+      <File FileName="Assets/Scripts/UserInfo.cs" Line="17" Column="25" />
+      <File FileName="Assets/Scripts/GoldText.cs" Line="14" Column="6" />
+      <File FileName="Assets/Scripts/CatnipText.cs" Line="5" Column="1" />
+      <File FileName="Assets/Scripts/WoodText.cs" Line="20" Column="53" />
+      <File FileName="Assets/ButtonPortal.cs" Line="10" Column="32" />
+      <File FileName="../../../../../Applications/Unity/Hub/Editor/2019.2.15f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

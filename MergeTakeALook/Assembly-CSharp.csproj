@@ -70,6 +70,7 @@
     <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleUI.cs" />
     <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
     <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs" />
+    <Compile Include="Assets\Scripts\ButtonPortal.cs" />
     <Compile Include="Assets\Scripts\CatGenerator.cs" />
     <Compile Include="Assets\Scripts\CatnipText.cs" />
     <Compile Include="Assets\Scripts\CatSlot.cs" />

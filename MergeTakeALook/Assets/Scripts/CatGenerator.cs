@@ -30,7 +30,7 @@ public class CatGenerator : MonoBehaviour
             else
                 genGauge = maxGauge;
         }
-        Debug.Log(genGauge);
+        // Debug.Log(genGauge);
     }
 
     public void GenerateCat()

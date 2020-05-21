@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UserInfo : MonoBehaviour
 {
+    public static UserInfo singleton = null;
 
     private long gold;
     private long catnip;
@@ -13,6 +14,19 @@ public class UserInfo : MonoBehaviour
     public long getCatnip() { return catnip; }
     public long getWood() { return wood; }
 
+    private void Awake()
+    {
+        if (singleton == null)
+        {
+            singleton = this;
+        }
+        else if (singleton != this)
+        {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(gameObject);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +34,7 @@ public class UserInfo : MonoBehaviour
         gold = 0;
         catnip = 1000;
         wood = 40;
+        
     }
 
     // Update is called once per frame
