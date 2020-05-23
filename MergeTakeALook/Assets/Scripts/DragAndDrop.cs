@@ -19,7 +19,7 @@ public class DragAndDrop : MonoBehaviour
     void Start()
     {
         collided = new List<GameObject>();
-        CatSlots = GameObject.Find("CatSlots");
+        CatSlots = GameObject.Find("CatSlotList");
 
         if (CatSlots == null)
             Debug.Log("Warning: Cannot find CatSlots!");
@@ -33,7 +33,7 @@ public class DragAndDrop : MonoBehaviour
             Vector3 mousePos;
             mousePos = Input.mousePosition;
             mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-            this.gameObject.transform.localPosition = new Vector3(mousePos.x - initPosX, mousePos.y  - initPosY, this.gameObject.transform.localPosition.z);
+            this.gameObject.transform.localPosition = new Vector3(mousePos.x - initPosX, mousePos.y  - initPosY, -2);
         }
     }
 
@@ -103,9 +103,9 @@ public class DragAndDrop : MonoBehaviour
                         isMerged = true;
                         collided.Remove(swapCat.gameObject);
                         swapCat.gameObject.SetActive(false);
-                        GameObject nextLevelCat = Object.Instantiate(normalCats.GetComponent<NormalCats>().normalCatList[GetComponent<NormalTakeALook>().catLevel], new Vector3(0, 0, 0), Quaternion.identity);
+                        GameObject nextLevelCat = Object.Instantiate(normalCats.GetComponent<NormalCats>().normalCatList[GetComponent<NormalTakeALook>().catLevel], new Vector3(0, 0, -2), Quaternion.identity);
                         nextLevelCat.transform.parent = nearestSlot.transform;
-                        nextLevelCat.transform.localPosition = new Vector3(0, 0, 0);
+                        nextLevelCat.transform.localPosition = new Vector3(0, 0, -2);
                         Destroy(swapCat.gameObject);
                     }
 
@@ -122,7 +122,7 @@ public class DragAndDrop : MonoBehaviour
                 else
                 {
                     transform.parent = nearestSlot.transform;
-                    transform.localPosition = new Vector3(startPosX, startPosY, 0);
+                    transform.localPosition = new Vector3(startPosX, startPosY, -2);
                     gameObject.GetComponentInChildren<SpriteRenderer>().sprite = normalCat;
                 }
             }
@@ -143,8 +143,8 @@ public class DragAndDrop : MonoBehaviour
         }
 
 
-        transform.localPosition = new Vector3(startPosX, startPosY, 0);
-        if (swapCat != null) swapCat.localPosition = new Vector3(0, 0, 0);
+        transform.localPosition = new Vector3(startPosX, startPosY, -2);
+        if (swapCat != null) swapCat.localPosition = new Vector3(0, 0, -2);
         isLocked = false;
     }
 

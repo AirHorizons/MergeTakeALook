@@ -120,5 +120,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75b4af9b4cdfa4890b95f6268d743aae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mountedBox: {fileID: 21300000, guid: 4af745c76fd4a43b88581308e45c7644, type: 3}
-  unmountedBox: {fileID: 21300000, guid: 508e8d406b96e4f27a67fa47584cb952, type: 3}
+  mountableBox: {fileID: 21300000, guid: 4af745c76fd4a43b88581308e45c7644, type: 3}
+  unmountableBox: {fileID: 21300000, guid: 508e8d406b96e4f27a67fa47584cb952, type: 3}

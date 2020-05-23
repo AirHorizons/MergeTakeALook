@@ -11,8 +11,11 @@ public class UserInfo : MonoBehaviour
     private long wood;
 
     public long getGold() { return gold; }
+    public void setGold(long g) { gold = g; }
     public long getCatnip() { return catnip; }
+    public void setCatnip(long c) { catnip = c; }
     public long getWood() { return wood; }
+    public void setWood(long w) { wood = w; }
 
     private void Awake()
     {
@@ -25,21 +28,5 @@ public class UserInfo : MonoBehaviour
             Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        // bring numbers from save file
-        gold = 0;
-        catnip = 1000;
-        wood = 40;
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

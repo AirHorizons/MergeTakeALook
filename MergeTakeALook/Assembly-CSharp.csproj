@@ -74,11 +74,15 @@
     <Compile Include="Assets\Scripts\CatGenerator.cs" />
     <Compile Include="Assets\Scripts\CatnipText.cs" />
     <Compile Include="Assets\Scripts\CatSlot.cs" />
+    <Compile Include="Assets\Scripts\CatSlotList.cs" />
     <Compile Include="Assets\Scripts\DragAndDrop.cs" />
+    <Compile Include="Assets\Scripts\FileSaveLoader.cs" />
     <Compile Include="Assets\Scripts\GaugeBar.cs" />
     <Compile Include="Assets\Scripts\GoldText.cs" />
     <Compile Include="Assets\Scripts\NormalCats.cs" />
     <Compile Include="Assets\Scripts\NormalTakeALook.cs" />
+    <Compile Include="Assets\Scripts\RareTakeALook.cs" />
+    <Compile Include="Assets\Scripts\SaveFileData.cs" />
     <Compile Include="Assets\Scripts\UserInfo.cs" />
     <Compile Include="Assets\Scripts\WoodText.cs" />
     <None Include="Assets\Demigiant\DOTween\readme.txt" />

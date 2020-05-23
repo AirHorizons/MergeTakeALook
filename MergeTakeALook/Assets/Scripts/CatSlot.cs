@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class CatSlot : MonoBehaviour
 {
-    public Sprite mountedBox;
-    public Sprite unmountedBox;
+    public Sprite mountableBox;
+    public Sprite unmountableBox;
 
+    public bool isMountable { get; set; }
     public bool isCatMounted { get; set; }
 
     // Start is called before the first frame update
@@ -18,8 +19,7 @@ public class CatSlot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isCatMounted = (gameObject.transform.childCount > 0);
-        if (isCatMounted) GetComponent<SpriteRenderer>().sprite = mountedBox;
-        else GetComponent<SpriteRenderer>().sprite = unmountedBox;
+        if (isMountable) GetComponent<SpriteRenderer>().sprite = mountableBox;
+        else GetComponent<SpriteRenderer>().sprite = unmountableBox;
     }
 }

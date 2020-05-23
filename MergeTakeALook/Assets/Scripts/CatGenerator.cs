@@ -9,13 +9,14 @@ public class CatGenerator : MonoBehaviour
     private int maxGauge = 500;
     private int gaugeSpeed = 20;
     private int gaugeChargeRate = 10;
-    private int gaugeClickrate = 10;
+    private int gaugeClickrate = 100;
     public GameObject newCatPrefab;
-    public GameObject catSlots;
+    private GameObject catSlots;
 
     // Start is called before the first frame update
     void Start()
     {
+        catSlots = GameObject.Find("CatSlotList");
         InvokeRepeating("chargeGauge", 0.1f, 0.1f);
     }
 
@@ -48,7 +49,7 @@ public class CatGenerator : MonoBehaviour
             {
                 if (catSlot.childCount == 0)
                 {
-                    GameObject newCat = Instantiate(newCatPrefab, catSlot.position, Quaternion.identity);
+                    GameObject newCat = Instantiate(newCatPrefab, new Vector3(catSlot.position.x, catSlot.position.y, -2), Quaternion.identity);
                     newCat.transform.parent = catSlot;
                     genGauge -= 100;
                     return;
